@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true, // If using standalone components
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [CommonModule], // Import CommonModule here
 })
 export class AppComponent {
-  title = 'chatbot';
+  isChatbotOpen = false;
+
+  toggleChatbot() {
+    this.isChatbotOpen = !this.isChatbotOpen;
+  }
 }
